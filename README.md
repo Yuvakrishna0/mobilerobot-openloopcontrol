@@ -33,18 +33,73 @@ Step5:
 ```python
 from robomaster import robot
 import time
+from robomaster import camera
 
-if __name__ == '__main__':
+if _name_ == '_main_':
     ep_robot = robot.Robot()
     ep_robot.initialize(conn_type="ap")
 
     ep_chassis = ep_robot.chassis
+    ep_led = ep_robot.led
+    ep_camera = ep_robot.camera
 
-    ## Write your code here
+    print("Video streaming started.....")
+    ep_camera.start_video_stream(display=True, resolution = camera.STREAM_360P)
+
+    '''
+    x = x-axis movement distance,( meters) [-5,5]
+    y = y-axis movement distance,( meters) [-5,5]
+    z = rotation about z axis ( degree)[-180,180]
+    xy_speed = xy axis movement speed,( unit meter/second) [0.5,2]
+    '''
+    ep_chassis.move(x=0.6, y=0, z=0, xy_speed=1).wait_for_completed()
+    ep_led.set_led(comp = "all",r=255,g=100,b=0,effect="on")
 
 
+    ep_chassis.move(x=0, y=0, z=-45, xy_speed=1).wait_for_completed()
+    ep_led.set_led(comp = "all",r=255,g=102,b=0,effect="on")
 
-    
+    ep_chassis.move(x=0.5, y=0, z=0, xy_speed=1).wait_for_completed()
+    ep_led.set_led(comp = "all",r=255,g=100,b=0,effect="on")
+
+    ep_chassis.move(x=0, y=0, z=-49, xy_speed=1).wait_for_completed()
+    ep_led.set_led(comp = "all",r=255,g=102,b=0,effect="on")
+
+    ep_chassis.move(x=2.2, y=0, z=0, xy_speed=1).wait_for_completed()
+    ep_led.set_led(comp = "all",r=255,g=100,b=0,effect="on")
+
+    ep_chassis.move(x=0, y=0, z=53, xy_speed=1).wait_for_completed()
+    ep_led.set_led(comp = "all",r=255,g=102,b=0,effect="on")
+
+    ep_chassis.move(x=1.2, y=0, z=0, xy_speed=1).wait_for_completed()
+    ep_led.set_led(comp = "all",r=255,g=100,b=0,effect="on")
+
+    ep_chassis.move(x=0, y=0, z=-35, xy_speed=1).wait_for_completed()
+    ep_led.set_led(comp = "all",r=255,g=102,b=0,effect="on")
+
+    ep_chassis.move(x=1.1, y=0, z=0, xy_speed=1).wait_for_completed()
+    ep_led.set_led(comp = "all",r=255,g=100,b=0,effect="on")
+
+    ep_chassis.move(x=0, y=0, z=-35, xy_speed=1).wait_for_completed()
+    ep_led.set_led(comp = "all",r=255,g=102,b=0,effect="on")
+
+    ep_chassis.move(x=1, y=0, z=0, xy_speed=1).wait_for_completed()
+    ep_led.set_led(comp = "all",r=255,g=100,b=0,effect="on")
+
+    ep_chassis.move(x=0, y=0, z=-32, xy_speed=1).wait_for_completed()
+    ep_led.set_led(comp = "all",r=255,g=102,b=0,effect="on")
+
+    ep_chassis.move(x=0.6, y=0, z=0, xy_speed=1).wait_for_completed()
+    ep_led.set_led(comp = "all",r=255,g=100,b=0,effect="on")
+
+    ep_chassis.move(x=0, y=0, z=-25, xy_speed=1).wait_for_completed()
+    ep_led.set_led(comp = "all",r=255,g=102,b=0,effect="on")
+
+    time.sleep(4)
+    ep_camera.stop_video_stream()
+    print("Stopped video streaming.....")
+
+
     ep_robot.close()
 ```
 
@@ -64,7 +119,7 @@ Insert image here
 
 Upload your video in Youtube and paste your video-id here
 
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE)
+https://www.youtube.com/watch?v=j4MQ5lHXOA4
 
 <br/>
 <br/>
