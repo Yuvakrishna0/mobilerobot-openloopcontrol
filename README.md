@@ -99,7 +99,9 @@ if _name_ == '_main_':
 
 ![robo](./img/robomaster.png)
 
-Insert image here
+## MobileRobot starting point:
+![WhatsApp Image 2023-06-08 at 8 46 35 AM](https://github.com/Yuvakrishna0/mobilerobot-openloopcontrol/assets/117915037/8314c96a-bd33-4bdd-a6c9-7b692dc98553)
+
 
 
 <br/>
